@@ -1,0 +1,46 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+RewriteRule ^gerencias/$ public/gerencias.php [L]
+RewriteRule ^inicio/$ public/index.php [L]
+RewriteRule ^servicios/$ public/servicios.php [L]
+RewriteRule ^tupa-ongei/$ public/tupa_ongei.php [L]
+
+RewriteRule ^contactenos/$ public/contacto.php [L]
+RewriteRule ^chachapoyas/$ public/chachapoyas.php [L]
+RewriteRule ^plan-de-incentivos/$ public/planIncentivos.php [L]
+RewriteRule plan-de-incentivos/(.*)/(.*)/$ public/planIncentivosDetalle.php?categoria=$1&articulo=$2 [L]
+RewriteRule ^normas-municipales/$ public/normas.php [L]
+RewriteRule ^consulte-su-tramite/$ public/tramite.php [L]
+
+RewriteRule ^noticias/$ public/noticia.php [L]
+RewriteRule ^noticias/(.*)/(.*)/$ public/noticiaDetalle.php?mes_anho=$1&articulo=$2 [L]
+RewriteRule ^noticias/(.*)/$ public/noticiaFiltro.php?filtrox=$1 [L]
+RewriteRule ^documentos-de-gestion/$ public/documentoGestion.php [L]
+RewriteRule documentos-de-gestion/(.*)/(.*)$ public/documentosGestionDetalle.php?categoria=$1&articulo=$2 [L]
+RewriteRule municipalidad/(.*)/(.*)$ public/municipalidad.php?categoria=$1&articulo=$2 [L]
+
+#RewriteRule ^convocatoria-personal/$ public/convocatoria_personal.php [L]
+#RewriteRule ^convocatoria-personal2/$ public/convocatoria_personal2.php [L]
+
+RewriteRule ^convocatoria-personal/$ public/convocatoria_personal.php [L]
+RewriteRule ^convocatoria-personal/(.*)/postular/$ public/postularConvocatoria.php?plaza=$1 [L]
+RewriteRule ^convocatoria-personal/(.*)/iniciar-sesion/$ public/LoginRegistroConvocatoria.php?plaza=$1 [L]
+RewriteRule ^concejo-municipal/$ public/concejoMunicipal.php [L]
+RewriteRule concejo-municipal/(.*)/(.*)/$ public/concejoMunicipalDetalle.php?categoria=$1&articulo=$2 [L]
+
+RewriteRule participacion-ciudadana/(.*)/(.*)$ public/participacion.php?categoria=$1&articulo=$2 [L]
+#RewriteRule documento-de-gestion/(.*)/(.*)$ public/documentoGestion.php?categoria=$1&articulo=$2 [L]
+#Municipalidad
+RewriteRule chachapoyas/(.*)/(.*)/$ public/chachapoyas_detalle.php?categoria=$1&articulo=$2 [L]
+RewriteRule ^libro-de-reclamaciones/$ public/libro_reclamaciones.php [L]
+RewriteRule ^portal-de-transparencia/$ public/transparencia.php [L]
+RewriteRule ^agenda-del-alcalde/$ public/agendaAlcalde.php [L]
+
+RewriteRule servicios/(.*)/(.*)$ public/serviciosDetalle.php?categoria=$1&titulo_articulo=$2 [L]
+RewriteRule gerencias/(.*)/$ public/gerenciaDetalle.php?categoria=$1 [L]
+
+#ErrorDocument 404 http://www.munichachapoyas.gob.pe
